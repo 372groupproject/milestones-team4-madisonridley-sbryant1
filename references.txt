@@ -1,1 +1,17 @@
-Will hold references to our sources
+-- websites --
+
+https://www2.cs.arizona.edu/icon/
+http://progopedia.com/language/icon/
+http://www.cse.scu.edu/~rdaniels/html/courses/Coen171/Icon_files/iconprog.pdf
+
+-- language reference manual -- 
+
+https://www2.cs.arizona.edu/icon/refernce/ref.htm
+
+-- Mailing List --
+
+https://www2.cs.arizona.edu/icon/mlist.htm
+
+-- Icon Project -- 
+
+https://www2.cs.arizona.edu/icon/docs/ipd286.htm
