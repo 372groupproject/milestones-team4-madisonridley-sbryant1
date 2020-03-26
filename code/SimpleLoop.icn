@@ -1,0 +1,6 @@
+#simple loop that prints out numbers 1 through 10
+
+procedure main()
+    every i := 1 to 10 do
+      write(i)
+end
