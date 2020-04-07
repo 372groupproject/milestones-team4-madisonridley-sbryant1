@@ -1,0 +1,32 @@
+# Simple icon program to do temperature conversion
+
+procedure main()
+
+  write("Time to convert temperatures!")
+  write("Enter 1 to convert from Fahrenheit to Celcius, or 2 to convert from Celcius to Fahrenheit")
+  i := read()
+
+  while ( i ~== "1" & i ~== "2") do {
+    write("Please enter 1 or 2!")
+    i := read()
+  }
+
+  if (i == 1) then FtoC()
+  else CtoF()
+
+end
+
+procedure FtoC()
+  write("Please enter Fahrenheit temperature")
+  t := read()
+  t := (t - 32) / (1.8)
+  write("The temperature in Celcius is ", t)
+
+end
+
+procedure CtoF()
+  write("Please enter Celcius temperature")
+  t := read()
+  t := (t * (1.8) + 32)
+  write("The temperature in Fahrenheit is ", t)
+end
