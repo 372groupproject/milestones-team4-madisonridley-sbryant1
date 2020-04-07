@@ -1,0 +1,15 @@
+# demonstration of next in icon language
+# program prints even numbers up to, but not including 10
+
+procedure main()
+  i := 0
+  while (i < 10) do {
+
+    write(i)
+    i +:= 1
+
+    if ( i % 2 == 0) then next
+    else i +:= 1
+  }
+
+end
