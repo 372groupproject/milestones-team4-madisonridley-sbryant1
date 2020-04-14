@@ -1,0 +1,39 @@
+#icon snippet determines the max value inside a table and prints
+#out the key along with the value
+
+
+
+procedure main()
+
+  some_table := table(0)
+
+  some_table["live"] := 1
+  some_table["long"] := 3
+  some_table["and"] := 4
+  some_table["prosper"] := 7
+  some_table["may"] := 2
+  some_table["the"] := 9
+  some_table["force"] := 11
+  some_table["be"] := 6
+  some_table["with"] := 5
+  some_table["you"] := 8
+
+  find_max(some_table)
+
+
+end
+
+
+procedure find_max(some_table)
+
+  temp_max := 0
+  temp_key := ""
+
+  every x := key(some_table) do
+    if some_table[x] > temp_max then
+      temp_max := some_table[x]
+      temp_key := x
+
+  write("Max key,value pair is : " , temp_key, " -> ", temp_max)
+
+end
