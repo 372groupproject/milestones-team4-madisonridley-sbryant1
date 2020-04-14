@@ -1,0 +1,12 @@
+# if then else demonstration
+
+procedure main()
+
+  i := 1
+
+  write("i is 1")
+
+  if i < 0 then write("i is less than 0")
+  else write("i is greater than 0")
+
+end

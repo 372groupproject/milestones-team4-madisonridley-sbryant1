@@ -1,0 +1,12 @@
+#snippet of list creation
+
+
+
+procedure main()
+
+  some_list := [0,1,2,3,4,5,6,7,8,9]
+
+  every i := 0 to *some_list do
+    write(some_list[i])
+
+end

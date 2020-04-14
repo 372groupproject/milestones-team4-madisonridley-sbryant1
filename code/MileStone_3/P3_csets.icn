@@ -1,0 +1,11 @@
+#cset snippet
+
+
+
+procedure main()
+
+ some_chars := 'abcdefghijklmnopqrstuvwxyz'
+ write(right(some_chars,7))
+ write(left(some_chars,7))
+
+end

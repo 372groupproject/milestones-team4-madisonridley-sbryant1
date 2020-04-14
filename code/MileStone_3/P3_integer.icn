@@ -1,0 +1,13 @@
+#integer number snippet
+
+
+procedure main()
+
+  nbr := 117.5
+  write(nbr)
+  write(type(nbr))
+  nbr := integer(nbr)
+  write(nbr)
+  write(type(nbr))
+
+end

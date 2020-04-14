@@ -1,0 +1,11 @@
+#null snippet, in this case null in conjunction with write()
+#produces the empty string
+
+
+procedure main()
+
+  write("hi")
+  write()
+  write("bye")
+
+end

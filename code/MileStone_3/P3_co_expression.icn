@@ -1,0 +1,30 @@
+#snippet that demonstrates co-expression
+
+
+procedure main()
+
+  co_expression(8,42)
+
+end
+
+procedure co_expression(num1,num2)
+
+  nbr1 := create add1(num1)
+  nbr2 := create add2(num2)
+
+  write(@nbr1)
+  write(@nbr2)
+
+end
+
+procedure add1(num1)
+
+  return num1 +:= 1
+
+end
+
+procedure add2(num2)
+
+  return num2 +:= 2
+
+end

@@ -1,0 +1,10 @@
+#file snippet
+
+procedure main()
+
+  some_file := open("test.txt")
+  while line := read(some_file) do
+    write(line)
+
+
+end

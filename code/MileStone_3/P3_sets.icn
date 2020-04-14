@@ -1,0 +1,11 @@
+#snippet for sets demonstration
+
+
+procedure main()
+
+  some_set := set(["hi", 3.14, 42, 117, 117,"bye"])
+
+    write("hi will be displayed if it\'s a member of the set\n")
+    write(member(some_set, "hi"))
+
+end

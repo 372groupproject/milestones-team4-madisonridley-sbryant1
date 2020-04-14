@@ -1,0 +1,22 @@
+#procedure snippet
+
+
+
+procedure main()
+
+ welcome("HI")
+ depart("BYE")
+
+end
+
+procedure welcome(some_string)
+
+  write(some_string)
+
+end
+
+procedure depart(some_string)
+
+  write(some_string)
+
+end

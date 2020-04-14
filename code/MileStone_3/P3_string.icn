@@ -1,0 +1,12 @@
+#string snippet
+
+
+procedure main()
+
+  some_string := "abcdefghijklmnopqrstuvwxyz"
+
+  every i := 0 to *some_string do
+    write(some_string[i])
+
+
+end

@@ -1,0 +1,9 @@
+#runtime error snippet
+
+
+procedure main()
+
+  bad_error := ("nope" + 123.456)
+
+
+end

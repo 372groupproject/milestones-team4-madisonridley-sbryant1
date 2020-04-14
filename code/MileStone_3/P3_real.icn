@@ -1,0 +1,13 @@
+#real number snippet
+
+
+procedure main()
+
+  nbr := 117
+  write(nbr)
+  write(type(nbr))
+  nbr := real(nbr)
+  write(nbr)
+  write(type(nbr))
+
+end

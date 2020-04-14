@@ -1,0 +1,15 @@
+# demonstration of repeat and break, seeing that both
+# work together, I thought it would be best
+# to do just one program rather than having two
+
+procedure main()
+
+  i := 0
+  repeat {
+
+    write(i)
+    if (i > 10) then break
+    else i +:= 2
+  }
+
+end

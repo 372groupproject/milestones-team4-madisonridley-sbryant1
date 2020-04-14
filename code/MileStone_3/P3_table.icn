@@ -1,0 +1,18 @@
+#table snippet
+
+
+procedure main()
+
+  some_table := table(0)
+  some_table["live"] := 1
+  some_table["long"] := 2
+  some_table["and"] := 3
+  some_table["prosper"] := 4
+
+  every x := key(some_table) do
+    write("key -> ", x, " : value -> ", some_table[x])
+
+
+
+
+end

@@ -1,0 +1,12 @@
+#window snippet
+
+link graphics
+
+
+procedure main()
+window := WOpen("size=200,200" | stop("can't open window"))
+#WOpen("size=400,400")
+WWrite("Hello World")
+WDone(window)
+
+end

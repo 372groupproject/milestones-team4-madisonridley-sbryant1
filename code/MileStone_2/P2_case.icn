@@ -1,0 +1,15 @@
+# case control structure in icon
+
+procedure main()
+
+  x := 117
+
+  case x of {
+    8 : write("x is 8")
+    28 : write("x is 28")
+    42 : write("x is 42")
+    117 : write("x is 117")
+    default : write("No number found")
+  }
+
+end
