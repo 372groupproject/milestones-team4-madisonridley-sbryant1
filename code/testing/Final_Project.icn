@@ -1,0 +1,63 @@
+
+
+
+
+procedure main()
+
+  numbers_list := get_numbers()
+  sorted_numbers := []
+  list_size := integer(*numbers_list)
+  #write(&time)
+  every i := 0 to *numbers_list do
+    write(numbers_list[i])
+
+  #write(&time)
+  #write(integer(*numbers_list))
+  write("this is list size ", list_size)
+  quick_sort(numbers_list, 0, list_size - 1)
+
+
+end
+
+procedure get_numbers()
+  numbers_file := open("Numbers.txt")
+  numbers_list := []
+  while line := read(numbers_file) do
+    numbers_list := numbers_list ||| [integer(line)]
+  return numbers_list
+
+end
+
+procedure quick_sort(numbers_list, low, high)
+    if low < high then
+        index := quick_sort_helper(numbers_list, low, high)
+        write("this is quick sort index --> ", index)
+        quick_sort(numbers_list, low, index - 1)
+        quick_sort(numbers_list, index + 1, high)
+
+end
+
+procedure quick_sort_helper(numbers_list, low, high)
+  pivot := numbers_list[high]
+  index := low - 1
+  write("this is pivot ", pivot)
+
+  write("this is the current index ", index)
+  every i := low to (high - 1) do
+      if (numbers_list[i] < pivot) then
+          write("this is high - 1 ---> ", high-1)
+          index +:= 1
+          write("every loop index is ", index)
+          temp1 := numbers_list[index]
+          numbers_list[index] := numbers_list[i]
+          numbers_list[i] := temp1
+
+
+  temp2 := numbers_list[index + 1]
+  numbers_list[index + 1] := numbers_list[high]
+  numbers_list[high] := temp2
+
+  index_temp := index + 1
+  write("this is the returning index ", index_temp)
+  return index_temp
+end
