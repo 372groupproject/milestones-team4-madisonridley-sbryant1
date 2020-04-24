@@ -1,9 +1,4 @@
 //Samuel Bryant
-//CSCV 345
-//lAB 2
-
-//program generates an array and an array list of random number that are 
-//then sorted by merge sort and quick sort
 
 
 
@@ -18,7 +13,7 @@ public class quick_sort {
 	public static void main(String[] args) {
 		
 		
-	int size = 10; ///MODIFY THIS NUMBER TO SET THE AMOUNT OF ELEMENTS TO SORT
+	int size = 100000; ///MODIFY THIS NUMBER TO SET THE AMOUNT OF ELEMENTS TO SORT
 	
 	sortFunction(size);
 	
@@ -67,11 +62,6 @@ public class quick_sort {
 		
 		System.out.println("\nQuick Sorting Time: " + (quickEnd - quickStart) + " milliseconds");
 		
-		for(int i = 0; i <= 9; i++) {
-			System.out.println(i);
-		}
-		
-		
 	}
 	
 	private static void writeToFile(int[] randomsQuick) {
@@ -86,9 +76,6 @@ public class quick_sort {
 		}
 		
 	}
-
-
-
 	
 	//recursive function for quick sorting
 	public static void quick(int[] randomsQuick, Integer low, Integer high) {
@@ -109,7 +96,7 @@ public class quick_sort {
 		int pivot = randomsQuick[high];
 		
 		int index = low - 1;
-		System.out.println("high - 1 ----> " + (high - 1));
+		
 		for(int i = low; i <= high - 1; i++) {
 			if(randomsQuick[i] < pivot) {
 				index++;
