@@ -4,23 +4,38 @@
 
 procedure main()
   begin_time := &time
-  numbers_list := get_numbers()
+  numbers_list_1 := get_numbers()
+  numbers_list_2 := []
+  numbers_list_2 |||:= numbers_list_1
+
   sorted_numbers := []
-  list_size := integer(*numbers_list)
+  list_size := integer(*numbers_list_1)
 
-  start_time := &time
-  #write(integer(*numbers_list))
+  quick_start_time := &time
+  #write(integer(*numbers_list_1))
 
-  quick_sort(numbers_list, 1, list_size)
+  write("this is at index 10 ->", numbers_list_1[10])
+  quick_sort(numbers_list_1, 1, list_size)
 
-  end_time := &time
-  write("Sorting Time")
-  write(end_time-start_time, " milliseconds")
+  quick_end_time := &time
+
+  merge(numbers_list_2)
+
+  merge_end_time := &time
+
+  write("Quick Sorting Time ")
+  write(quick_end_time-quick_start_time, " milliseconds")
+  write("Merge Sorting Time ")
+  write(merge_end_time-quick_end_time, " milliseconds")
   write("Run time")
-  write(end_time-begin_time, " milliseconds")
+  write(merge_end_time-begin_time, " milliseconds")
 
-  #every i := 0 to *numbers_list do
-  #  write(numbers_list[i])
+
+  #every i := 1 to *numbers_list_1 do
+  #  write(numbers_list_1[i])
+
+  every i := 1 to *numbers_list_2 do
+    write(numbers_list_2[i])
 
 end
 
@@ -69,4 +84,105 @@ procedure quick_sort_helper(numbers_list, low, high)
   numbers_list[high] := temp2
 
   return index + 1
+end
+
+
+
+
+
+
+procedure merge(nbrs)
+  write("nbrs size is now ", *nbrs)
+  write("nbrs size divided by 2 is now ", *nbrs/2)
+
+  #write("SORTED LIST")
+  #every k := 1 to *nbrs do
+  #  write(nbrs[k])
+
+
+
+  if *nbrs < 2 then {
+    write("IN BASE CASE!!")
+    return nbrs
+    }
+
+
+  firstList := []
+  secondList := []
+
+  i := 1
+  j := ((*nbrs)/2) + 1
+
+  #write("nbrs size ", *nbrs)
+  write("i is ", i)
+  write("j is ", j)
+
+  while i <= (*nbrs/2) do {
+    put(firstList,nbrs[i])
+    write("while loop i is -> ", i)
+    i +:= 1
+    }
+
+
+
+
+  while j <= (*nbrs) do {
+    put(secondList,nbrs[j])
+    write("while loop j is -> ", j)
+    j +:= 1
+    }
+
+    firstList |||:= merge(firstList)
+    secondList |||:= merge(secondList)
+
+    return mergeHelper(firstList,secondList)
+
+end
+
+
+procedure mergeHelper (firstList,secondList)
+
+  write("IN MERGE HELPER!!")
+
+  finalList := []
+
+  write("firstList SIZE -> ", *firstList)
+  write("secondList SIZE -> ", *secondList)
+
+  while (*firstList > 0) do {
+
+    #write("IN WHILE LOOP!!")
+
+    if (*secondList <= 0) then {
+      break
+    }else{
+
+      if (firstList[1] <= secondList[1]) then {
+        put(finalList,get(firstList))
+        #finalList |||:= get(firstList)
+        #pop(firstList)
+      } else {
+        put(finalList,get(secondList))
+        #finalList |||:= get(secondList)
+        #pop(secondList)
+      }
+    }
+  }
+
+
+  while (*firstList > 0) do {
+    put(finalList,pop(firstList))
+  }
+
+  while (*secondList > 0) do {
+    put(finalList,pop(secondList))
+  }
+
+  #write("SIZE OF FINAL LIST IS -> ", *finalList)
+
+  #every k := 1 to *finalList do
+  #  write(finalList[k])
+
+  return finalList
+
 end
