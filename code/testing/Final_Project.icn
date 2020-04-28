@@ -19,7 +19,7 @@ procedure main()
 
   quick_end_time := &time
 
-  merge(numbers_list_2)
+  sorted_numbers |||:= merge(numbers_list_2)
 
   merge_end_time := &time
 
@@ -36,6 +36,11 @@ procedure main()
 
   every i := 1 to *numbers_list_2 do
     write(numbers_list_2[i])
+
+  write("sorted numbers")
+  every i := 1 to *sorted_numbers do
+    write(sorted_numbers[i])
+
 
 end
 
@@ -103,7 +108,7 @@ procedure merge(nbrs)
 
   if *nbrs < 2 then {
     write("IN BASE CASE!!")
-    return nbrs
+      return nbrs
     }
 
 
@@ -114,12 +119,12 @@ procedure merge(nbrs)
   j := ((*nbrs)/2) + 1
 
   #write("nbrs size ", *nbrs)
-  write("i is ", i)
-  write("j is ", j)
+  #write("i is ", i)
+  #write("j is ", j)
 
   while i <= (*nbrs/2) do {
     put(firstList,nbrs[i])
-    write("while loop i is -> ", i)
+    #write("while loop i is -> ", i)
     i +:= 1
     }
 
@@ -128,19 +133,19 @@ procedure merge(nbrs)
 
   while j <= (*nbrs) do {
     put(secondList,nbrs[j])
-    write("while loop j is -> ", j)
+    #write("while loop j is -> ", j)
     j +:= 1
     }
 
-    firstList |||:= merge(firstList)
-    secondList |||:= merge(secondList)
+    firstList := merge(firstList)
+    secondList := merge(secondList)
 
     return mergeHelper(firstList,secondList)
 
 end
 
 
-procedure mergeHelper (firstList,secondList)
+procedure mergeHelper(firstList,secondList)
 
   write("IN MERGE HELPER!!")
 
@@ -151,7 +156,7 @@ procedure mergeHelper (firstList,secondList)
 
   while (*firstList > 0) do {
 
-    #write("IN WHILE LOOP!!")
+    write("IN WHILE LOOP!!")
 
     if (*secondList <= 0) then {
       break
