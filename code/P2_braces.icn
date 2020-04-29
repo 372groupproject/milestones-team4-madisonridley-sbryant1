@@ -1,5 +1,0 @@
-#demonstration of braces in icon
-
-procedure main()
-  every {write("Hello There!"); write("Gandalf!"); write("Live Long And Prosper")}
-end
