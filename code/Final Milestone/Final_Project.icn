@@ -1,0 +1,157 @@
+
+
+
+
+procedure main()
+  begin_time := &time
+  numbers_list_1 := get_numbers()
+  numbers_list_2 := []
+  numbers_list_2 |||:= numbers_list_1
+
+  sorted_numbers := []
+  list_size := integer(*numbers_list_1)
+
+  quick_start_time := &time
+
+  quick_sort(numbers_list_1, 1, list_size)
+
+  quick_end_time := &time
+
+  sorted_numbers |||:= merge(numbers_list_2)
+
+  merge_end_time := &time
+
+  write("Quick Sorting Time ")
+  write(quick_end_time-quick_start_time, " milliseconds")
+  write("Merge Sorting Time ")
+  write(merge_end_time-quick_end_time, " milliseconds")
+  write("Run time")
+  write(merge_end_time-begin_time, " milliseconds")
+
+  #write("quick sorted numbers")
+  #every i := 1 to *numbers_list_1 do
+  #  write(numbers_list_1[i])
+
+  #every i := 1 to *numbers_list_2 do
+  #  write(numbers_list_2[i])
+
+  #write("merge sorted numbers")
+  #every i := 1 to *sorted_numbers do
+  #  write(sorted_numbers[i])
+
+
+end
+
+procedure get_numbers()
+  numbers_file := open("Numbers0.txt")
+  numbers_list := []
+  while line := read(numbers_file) do
+    put(numbers_list,integer(line))
+  return numbers_list
+
+end
+
+procedure quick_sort(numbers_list, low, high)
+
+    if low < high then {
+        index := quick_sort_helper(numbers_list, low, high)
+        quick_sort(numbers_list, low, index - 1)
+        quick_sort(numbers_list, index + 1, high)
+        }
+
+end
+
+procedure quick_sort_helper(numbers_list, low, high)
+
+
+  pivot := numbers_list[high]
+  index := low - 1
+
+  i := low
+
+  while i <= (high - 1) do {
+    if (numbers_list[i] < pivot) then {
+
+        index +:= 1
+
+        temp1 := numbers_list[index]
+        numbers_list[index] := numbers_list[i]
+        numbers_list[i] := temp1
+        }
+
+    i +:= 1
+  }
+
+  temp2 := numbers_list[index + 1]
+  numbers_list[index + 1] := numbers_list[high]
+  numbers_list[high] := temp2
+
+  return index + 1
+end
+
+
+
+
+
+
+procedure merge(nbrs)
+
+  if *nbrs < 2 then {
+      return nbrs
+    }
+
+
+  firstList := []
+  secondList := []
+
+  i := 1
+  j := ((*nbrs)/2) + 1
+
+  while i <= (*nbrs/2) do {
+    put(firstList,nbrs[i])
+    i +:= 1
+    }
+
+  while j <= (*nbrs) do {
+    put(secondList,nbrs[j])
+    j +:= 1
+    }
+
+    firstList := merge(firstList)
+    secondList := merge(secondList)
+
+    return mergeHelper(firstList,secondList)
+
+end
+
+
+procedure mergeHelper(firstList,secondList)
+
+  finalList := []
+
+  while (*firstList > 0) do {
+
+    if (*secondList <= 0) then {
+      break
+    }else{
+
+      if (firstList[1] <= secondList[1]) then {
+        put(finalList,get(firstList))
+      } else {
+        put(finalList,get(secondList))
+      }
+    }
+  }
+
+
+  while (*firstList > 0) do {
+    put(finalList,pop(firstList))
+  }
+
+  while (*secondList > 0) do {
+    put(finalList,pop(secondList))
+  }
+
+  return finalList
+
+end
