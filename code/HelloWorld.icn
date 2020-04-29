@@ -1,5 +1,0 @@
-#First ever icon program
-
-procedure main()
-    write("Hello World")
-end
