@@ -1,0 +1,25 @@
+
+#icon program that demonstrates the use of parallel generators
+
+
+procedure main()
+
+    decimal := create(0 to 255)
+    hex := create(!"0123456789ABCDEF") || (!"0123456789ABCDEF")
+    octal := create ((0 to 3) || (0 to 7) || (0 to 7))
+    character := create image(!&cset)
+
+    #notice the create keyword, with "create" a generator is created
+    #for each time the generator is called the first value inside is returned, until
+    #the generator is called again then the generator will produce each subsequent value
+    #for instance, for @decimal, the first time it is called, it returns 0, second time
+    #its called, it returns 1, etc.
+    #@hex and @octal use essentially a loop within a loop structure. for @octal, the rightmost
+    #number 0 to 7 are returned first then the middle 0 to 7, then 0 to 3, after each loop of
+    #numbrs finish they loop again
+    #@character essentially gets the stringified values from the ascii table, one
+    #after the other 
+
+    while write (right(@decimal, 10), "\t", right(@hex, 10), "\t", right(@octal, 10), "\t", right(@character, 12))
+
+end
