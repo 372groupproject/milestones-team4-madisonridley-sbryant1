@@ -10,5 +10,5 @@ sorted numbers for verification.
 The comments in numbers_generator.java specify what to do, make sure that when you run the Final_Project 
 program, that the numbers txt file is located in the same directory.
 
-Check the README in the root directory for how to compile and run icon programs, if necessary.
+Check the README in the code folder for how to compile and run icon programs, if necessary.
 
