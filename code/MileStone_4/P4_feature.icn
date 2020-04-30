@@ -1,0 +1,41 @@
+
+#The purpose of this icon program is to demonstrate that lists are passed by
+#reference in icon. Notice how none of the procedures return.
+
+
+
+procedure main()
+
+  numbers := [0,1,2,3,4,5,6,7,8,9]
+
+  write("Original List")
+  every i := 1 to *numbers do
+    write(numbers[i])
+
+  addElement(numbers)
+
+  write("\nAdded Element To Original List")
+  every i := 1 to *numbers do
+    write(numbers[i])
+
+  remove_element(numbers)
+
+  write("\nRemoved Element From Original List")
+  every i := 1 to *numbers do
+    write(numbers[i])
+
+end
+
+#the number 10 is added to the end of the original list
+procedure addElement(someList)
+
+  put(someList,10)
+
+end
+
+#the first number in the original list is popped
+procedure remove_element(someList)
+
+  pop(someList)
+
+end
