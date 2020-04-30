@@ -1,3 +1,7 @@
+/*
+*merge sort algorithm for CSC372 final project
+*/
+
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -47,7 +51,7 @@ public class merge_sort {
 		/*
 		System.out.println("\n---UNSORTED MERGE---\n");
 
-		
+
 		for(int i = 0; i < randoms.length; i++) {
 			System.out.println(randoms[i]);
 		}
@@ -59,19 +63,19 @@ public class merge_sort {
 		sortedNbrs = merge(nbrs);
 
 		long mergeEnd = System.currentTimeMillis();
-		
+
 		////////////UNCOMMMENT TO SEE ALL THE SORTED NUMBERS
-		
+
 		/*
 		System.out.println();
 
 		System.out.println("\n---SORTED MERGE---\n");
 
-		
+
 		for(int i = 0; i < sortedNbrs.size(); i++) {
 			System.out.println(sortedNbrs.get(i));
 		}
-		 
+
 		*/
 
 		System.out.println("\nMerge Sorting Time: " + (mergeEnd - mergeStart) + " milliseconds");
@@ -90,21 +94,21 @@ public class merge_sort {
 
 		int i = 0;
 		int j = nbrs.size()/2;
-		
-		
+
+
 		while(i < nbrs.size()/2) {
 			firstList.add((Integer) nbrs.get(i));
 			i+=1;
-			
-			
+
+
 		}
-		
+
 
 		while(j < nbrs.size()) {
 			secondList.add((Integer) nbrs.get(j));
 			j+=1;
 		}
-		
+
 
 		firstList = merge(firstList);
 		secondList = merge(secondList);
@@ -119,7 +123,7 @@ public class merge_sort {
 
 
 		ArrayList<Integer> finalArrayList = new ArrayList<Integer>();
-		
+
 		while (firstArrayList.size() > 0 && secondArrayList.size() > 0) {
 			if(firstArrayList.get(0) <= secondArrayList.get(0)) {
 				finalArrayList.add(firstArrayList.remove(0));
@@ -129,8 +133,8 @@ public class merge_sort {
 			}
 
 		}
-		
-		
+
+
 		while(!firstArrayList.isEmpty()) {
 			finalArrayList.add(firstArrayList.remove(0));
 		}

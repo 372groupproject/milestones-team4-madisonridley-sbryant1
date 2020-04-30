@@ -1,3 +1,4 @@
+#quick sort algorithm for CSC372 final project
 
 import os
 os.chdir(os.path.dirname(__file__))

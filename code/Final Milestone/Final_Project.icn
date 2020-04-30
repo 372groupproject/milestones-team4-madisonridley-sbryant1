@@ -1,19 +1,24 @@
 
+#MADISON RIDLEY && SAMUEL BRYANT
+#CSC372
+#FINAL MILESTONE
+
+#icon program that reads random number from a text file and sort then
+#via quick sort and merge sort
 
 
 
 procedure main()
   begin_time := &time
+
   numbers_list_1 := get_numbers()
   numbers_list_2 := []
   numbers_list_2 |||:= numbers_list_1
-
   sorted_numbers := []
-  list_size := integer(*numbers_list_1)
-
+  
   quick_start_time := &time
 
-  quick_sort(numbers_list_1, 1, list_size)
+  quick_sort(numbers_list_1, 1, integer(*numbers_list_1))
 
   quick_end_time := &time
 
@@ -88,8 +93,6 @@ procedure quick_sort_helper(numbers_list, low, high)
 
   return index + 1
 end
-
-
 
 
 
