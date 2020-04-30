@@ -5,7 +5,8 @@ for sorting in python and java and compare it to icon to see how long it took ea
 final results are in the Sorting Results excel file.
 
 As stated in project video, you can modify the icon program to actually print out the 100000 unsorted and
-sorted numbers for verification.
+sorted numbers for verification. You'll also need to manuall edit the get_numbers() procedure to specify 
+which txt file you want to read.
 
 The comments in numbers_generator.java specify what to do, make sure that when you run the Final_Project 
 program, that the numbers txt file is located in the same directory.
